@@ -25,7 +25,9 @@ android {
             testCoverageEnabled true
         }
     }
-
+    lintOptions {
+        checkReleaseBuilds false
+    }
 }
 
 dependencies {
