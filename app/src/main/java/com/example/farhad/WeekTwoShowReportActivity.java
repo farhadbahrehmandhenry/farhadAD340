@@ -32,7 +32,7 @@ public class WeekTwoShowReportActivity extends AppCompatActivity {
     }
 
     public void backToForm(View view) {
-        Intent intent = new Intent(this, WeekTwoActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
 
         startActivity(intent);
     }

@@ -10,8 +10,9 @@
     <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="age">Age</string>
-    <string name="select_your_date_of_birth">Select Your Date of Birth</string>
+    <string name="select_your_date_of_birth">Date of Birth</string>
     <string name="register">Register</string>
     <string name="week_two_form">week two - form</string>
     <string name="bahrehmand_farhad_04_22_2020">Bahrehmand, Farhad 04-22-2020</string>
+    <string name="back_to_form">Back to Form</string>
 </resources>

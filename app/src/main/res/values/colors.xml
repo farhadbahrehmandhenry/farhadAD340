@@ -3,5 +3,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="weekTwoBackground">#E65100</color>
+    <color name="weekTwoBackground">#045255</color>
+    <color name="registerButton">#08969C</color>
+    <color name="dateOfBirthButton">#006064</color>
 </resources>

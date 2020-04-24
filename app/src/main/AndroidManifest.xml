@@ -16,8 +16,6 @@
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true">
         <activity android:name=".WeekTwoShowReportActivity"></activity>
-        <activity android:name=".WeekTwoActivity" />
-        <activity android:name=".WeekOneActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
