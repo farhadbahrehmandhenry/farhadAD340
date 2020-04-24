@@ -6,4 +6,8 @@
     <dimen name="textSize12">12sp</dimen>
     <dimen name="margin">24dp</dimen>
     <dimen name="textSize18">18sp</dimen>
+    <dimen name="padding12">12dp</dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="textSize14">14sp</dimen>
 </resources>

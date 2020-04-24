@@ -17,48 +17,48 @@
             >
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/marginBottom"
-            android:text="@string/bahrehmand_farhad_04_22_2020" />
+            android:layout_marginBottom="@dimen/margin20"
+            android:text="@string/bahrehmand_farhad_04_22_2020"
+            android:textSize="@dimen/textSize14" />
 
         <EditText
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/name"
-                android:inputType="textPersonName"
-                />
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/textSize14" />
 
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/textSize14" />
 
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/username"
-                android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/textSize14" />
 
-            <EditText
-                android:id="@+id/age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/age"
-                android:inputType="number" />
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/age"
+            android:inputType="number"
+            android:textSize="@dimen/textSize14" />
 
         <Button
             android:id="@+id/dateOfBirth"
@@ -68,7 +68,7 @@
             android:onClick="showCalendar"
             android:text="@string/select_your_date_of_birth"
             android:textAlignment="center"
-            android:textSize="@dimen/textSize12" />
+            android:textSize="@dimen/textSize14" />
 
             <TextView
                 android:id="@+id/dateOfBirthText"
@@ -80,12 +80,11 @@
             android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin"
+            android:layout_marginTop="@dimen/margin8"
             android:background="@color/registerButton"
             android:onClick="validateInput"
             android:text="@string/register"
-            android:textColorHighlight="#006064"
-            android:textSize="@dimen/textSize18" />
+            android:textSize="@dimen/textSize14" />
         </LinearLayout>
 
 </LinearLayout>

@@ -15,4 +15,7 @@
     <string name="week_two_form">week two - form</string>
     <string name="bahrehmand_farhad_04_22_2020">Bahrehmand, Farhad 04-22-2020</string>
     <string name="back_to_form">Back to Form</string>
+    <string name="requiredFieldMessage">name is required</string>
+    <string name="testTitle">Bahrehmand, Farhad 04-22-2020</string>
+
 </resources>
