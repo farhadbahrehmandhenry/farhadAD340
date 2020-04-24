@@ -20,7 +20,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/my_margin_bottom"
+            android:layout_marginBottom="@dimen/marginBottom"
             android:text="@string/bahrehmand_farhad_04_22_2020" />
 
         <EditText
@@ -68,7 +68,7 @@
             android:onClick="showCalendar"
             android:text="@string/select_your_date_of_birth"
             android:textAlignment="center"
-            android:textSize="@dimen/my_textSize1" />
+            android:textSize="@dimen/textSize12" />
 
             <TextView
                 android:id="@+id/dateOfBirthText"
@@ -80,12 +80,12 @@
             android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/my_margin"
+            android:layout_marginTop="@dimen/margin"
             android:background="@color/registerButton"
             android:onClick="validateInput"
             android:text="@string/register"
             android:textColorHighlight="#006064"
-            android:textSize="@dimen/my_textSize" />
+            android:textSize="@dimen/textSize18" />
         </LinearLayout>
 
 </LinearLayout>
