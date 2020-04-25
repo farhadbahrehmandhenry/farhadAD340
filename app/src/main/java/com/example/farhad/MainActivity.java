@@ -146,21 +146,20 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                         }
                     }
 
-                    Integer todayStringInt = Integer.valueOf(todayString);
-                    Integer previousDateStringInt = Integer.valueOf(previousDateString);
-                    Integer ageFromDateOfBirth = (todayStringInt - previousDateStringInt) / 10000;
+                    Double todayStringInt = Double.valueOf(todayString);
+                    Double previousDateStringInt = Double.valueOf(previousDateString);
+                    Double ageFromDateOfBirth = (todayStringInt - previousDateStringInt) / 10000;
 
                     if (age.getText().length() > 0) {
-                        if (Integer.valueOf(String.valueOf(age.getText())) == ageFromDateOfBirth + 1) {
+                        if (Double.valueOf(String.valueOf(age.getText())) == Math.round(ageFromDateOfBirth)) {
                             isValid = true;
                         }
                         else {
-                            Toast toast = Toast.makeText(
-                                    this,
-                                    "your age is not matched with your date of birth",
-                                    Toast.LENGTH_SHORT
-                            );
+                            StringBuilder msg = new StringBuilder(
+                                    "your age is not matched with your date of birth, calendar says you are "
+                            ).append(Math.round(ageFromDateOfBirth));
 
+                            Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.TOP, 0, 100);
                             toast.show();
                         }
@@ -169,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 else {
                     isValid = false;
 
-                    Toast toast =  Toast.makeText(this, "date of birth is not entered", Toast.LENGTH_SHORT);
+                    Toast toast =  Toast.makeText(this, "keep trying,  you are so close to sign up!!", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.TOP, 0, 100);
                     toast.show();
                 }
@@ -208,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             startActivity(intent);
         }
         else {
-            Toast toast = Toast.makeText(this, "date of birth is not entered", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "you are close to sign up!!", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.TOP, 0, 100);
             toast.show();
         }
