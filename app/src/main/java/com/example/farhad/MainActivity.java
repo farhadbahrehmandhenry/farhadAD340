@@ -1,33 +1,30 @@
 package com.example.farhad;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
-
-import static android.R.style.Theme_DeviceDefault_Dialog_MinWidth;
 
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     private EditText name;
     private EditText email;
     private EditText username;
     private EditText age;
-    private Button dateOfBirthButton;
-    private String dateOfBirth;
+    private EditText dob;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +35,20 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         email = findViewById(R.id.email);
         username = findViewById(R.id.username);
         age = findViewById(R.id.age);
-        dateOfBirthButton = findViewById(R.id.dateOfBirth);
+        dob = findViewById(R.id.dateOfBirthText);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        name.setText("");
+        email.setText("");
+        username.setText("");
+        age.setText("");
+        dob.setText("");
+
+        name.requestFocus();
     }
 
     public boolean isValid(String field, String fieldName) {
@@ -46,12 +56,18 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         if (TextUtils.isEmpty(field)) {
             StringBuilder msg = new StringBuilder(fieldName).append(" is required");
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+
+            Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.TOP, 0, 100);
+            toast.show();
         }
         else {
             if (fieldName == "email" && !Patterns.EMAIL_ADDRESS.matcher(field).matches()) {
                 StringBuilder msg = new StringBuilder(fieldName).append(" is in wrong format");
-                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+
+                toast.setGravity(Gravity.TOP, 0, 100);
+                toast.show();
             }
             if (fieldName == "age") {
                 boolean isValidAge = true;
@@ -62,8 +78,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 }
                 catch (NumberFormatException ex){
                     StringBuilder msg = new StringBuilder(fieldName).append(" should be a number");
-                    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
 
+                    toast.setGravity(Gravity.TOP, 0, 100);
+                    toast.show();
                     isValidAge = false;
                 }
 
@@ -71,18 +89,23 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     int age =Integer.parseInt(field);
 
                     if (age < 18) {
-                        Toast.makeText(
+                        Toast toast = Toast.makeText(
                                 this,
                                 "Sorry!! you are too young",
                                 Toast.LENGTH_SHORT
-                        ).show();
+                        );
+
+                        toast.setGravity(Gravity.TOP, 0, 100);
+                        toast.show();
                     }
                     else if (age > 120) {
-                        Toast.makeText(
+                        Toast toast = Toast.makeText(
                                 this,
                                 "Wow!!! you look much younger, are you sure about your age",
                                 Toast.LENGTH_SHORT
-                        ).show();
+                        );
+                        toast.setGravity(Gravity.TOP, 0, 100);
+                        toast.show();
                     }
                     else {
                         isValid = true;
@@ -100,8 +123,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 String previousDateString = "";
 
                 if (previousDate.length == 3) {
-                    String[] dob = dateOfBirth.split("-", 3);
-
                     for (int i = 2; i >= 0; i--) {
                         if (today[i].length() < 2) {
                             StringBuilder d = new StringBuilder("0").append(today[i]);
@@ -112,37 +133,43 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                             todayString += today[i];
                         }
 
-                        if (dob[i].length() < 2) {
-                            StringBuilder d = new StringBuilder("0").append(dob[i]);
+                        if (previousDate[i].length() < 2) {
+                            StringBuilder d = new StringBuilder("0").append(previousDate[i]);
 
                             previousDateString += d;
                         }
                         else {
-                            previousDateString += dob[i];
+                            previousDateString += previousDate[i];
                         }
                     }
 
-                    Integer todayStringInt = Integer.valueOf(todayString);
-                    Integer previousDateStringInt = Integer.valueOf(previousDateString);
-                    Integer ageFromDateOfBirth = (todayStringInt - previousDateStringInt) / 10000;
+                    Double todayStringInt = Double.valueOf(todayString);
+                    Double previousDateStringInt = Double.valueOf(previousDateString);
+                    Double ageFromDateOfBirth = (todayStringInt - previousDateStringInt) / 10000;
+                    Log.d("asdasdas", String.valueOf(previousDateStringInt));
+                    Log.d("asdasdas", String.valueOf(ageFromDateOfBirth));
 
                     if (age.getText().length() > 0) {
-                        if (Integer.valueOf(String.valueOf(age.getText())) == ageFromDateOfBirth) {
+                        if (Double.valueOf(String.valueOf(age.getText())) == Math.round(ageFromDateOfBirth)) {
                             isValid = true;
                         }
                         else {
-                            Toast.makeText(
-                                    this,
-                                    "your age is not matched with your date of birth",
-                                    Toast.LENGTH_SHORT
-                            ).show();
+                            StringBuilder msg = new StringBuilder(
+                                    "your age is not matched with your date of birth, calendar says you are "
+                            ).append(Math.round(ageFromDateOfBirth));
+
+                            Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.TOP, 0, 100);
+                            toast.show();
                         }
                     }
                 }
                 else {
                     isValid = false;
 
-                    Toast.makeText(this, "date of birth is not entered", Toast.LENGTH_SHORT).show();
+                    Toast toast =  Toast.makeText(this, "seems one of the fields have wrong format", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 0, 100);
+                    toast.show();
                 }
             }
             else {
@@ -158,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         String emailField = String.valueOf(email.getText()).trim();
         String usernameField = String.valueOf(username.getText()).trim();
         String ageField = String.valueOf(age.getText()).trim();
-        String dateOfBirthField = String.valueOf(dateOfBirthButton.getText()).trim();
+        String dateOfBirthField = String.valueOf(dob.getText()).trim();
 
         boolean emailIsValid = false;
         boolean usernameIsValid = false;
@@ -179,7 +206,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             startActivity(intent);
         }
         else {
-            Toast.makeText(this, "date of birth is not entered", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "you are close to sign up!!", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.TOP, 0, 100);
+            toast.show();
         }
     }
 
@@ -202,9 +231,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         String dayString = Integer.toString(dayOfMonth);
 
         String date = String.join("-", monthString, dayString, yearString);
-        dateOfBirth = String.join("-", dayString, monthString, yearString);
 
-        dateOfBirthButton.setText(date);
+        dob.setText(date);
     }
 
     @Override
@@ -212,7 +240,19 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         super.onRestoreInstanceState(savedInstanceState);
 
         if (savedInstanceState.containsKey(Constant.KEY_DATE_OF_BIRTH)) {
-            dateOfBirthButton.setText(savedInstanceState.getString(Constant.KEY_DATE_OF_BIRTH));
+            dob.setText(savedInstanceState.getString(Constant.KEY_DATE_OF_BIRTH));
+        }
+        if (savedInstanceState.containsKey(Constant.KEY_NAME)) {
+            name.setText(savedInstanceState.getString(Constant.KEY_NAME));
+        }
+        if (savedInstanceState.containsKey(Constant.KEY_EMAIL)) {
+            email.setText(savedInstanceState.getString(Constant.KEY_EMAIL));
+        }
+        if (savedInstanceState.containsKey(Constant.KEY_USERNAME)) {
+            username.setText(savedInstanceState.getString(Constant.KEY_USERNAME));
+        }
+        if (savedInstanceState.containsKey(Constant.KEY_AGE)) {
+            age.setText(savedInstanceState.getString(Constant.KEY_AGE));
         }
     }
 
@@ -220,6 +260,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putString(Constant.KEY_DATE_OF_BIRTH, dateOfBirthButton.getText().toString());
+        outState.putString(Constant.KEY_DATE_OF_BIRTH, dob.getText().toString());
+        outState.putString(Constant.KEY_NAME, name.getText().toString());
+        outState.putString(Constant.KEY_EMAIL, email.getText().toString());
+        outState.putString(Constant.KEY_USERNAME, username.getText().toString());
+        outState.putString(Constant.KEY_AGE, age.getText().toString());
     }
 }

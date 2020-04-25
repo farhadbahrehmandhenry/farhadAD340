@@ -1,99 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/weekTwoBackground"
-        tools:context=".MainActivity"
-        android:gravity="center"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/weekTwoBackground"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <LinearLayout
-            android:id="@+id/secondLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            >
+        android:id="@+id/secondLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/marginBottom"
-            android:text="@string/bahrehmand_farhad_04_22_2020" />
+            android:layout_marginBottom="@dimen/margin20"
+            android:text="@string/bahrehmand_farhad_04_22_2020"
+            android:textSize="@dimen/textSize14" />
 
         <EditText
-                android:id="@+id/name"
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/textSize14" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/textSize14" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/textSize14" />
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="@string/age"
+            android:inputType="number"
+            android:textSize="@dimen/textSize14" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/dateOfBirthText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:hint="@string/date_of_birth_mm_dd_yyyy"
+                android:textSize="@dimen/textSize14" />
+
+            <ImageButton
+                android:id="@+id/dateOfBirth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/name"
-                android:inputType="textPersonName"
+                android:layout_gravity="right"
+                android:background="#01579B"
+                app:srcCompat="@android:drawable/ic_menu_today"
+                android:onClick="showCalendar"
                 />
 
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress" />
-
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/username"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/age"
-                android:inputType="number" />
-
-        <Button
-            android:id="@+id/dateOfBirth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/dateOfBirthButton"
-            android:onClick="showCalendar"
-            android:text="@string/select_your_date_of_birth"
-            android:textAlignment="center"
-            android:textSize="@dimen/textSize12" />
-
-            <TextView
-                android:id="@+id/dateOfBirthText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/signup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin"
+            android:layout_height="@dimen/dim30"
+            android:layout_marginTop="@dimen/margin16"
             android:background="@color/registerButton"
             android:onClick="validateInput"
             android:text="@string/register"
-            android:textColorHighlight="#006064"
-            android:textSize="@dimen/textSize18" />
-        </LinearLayout>
+            android:textSize="@dimen/textSize14" />
 
+    </LinearLayout>
 </LinearLayout>
-
-
-
-
-
 
 
 
