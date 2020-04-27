@@ -51,6 +51,18 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         name.requestFocus();
     }
 
+    protected void onResume() {
+        super.onResume();
+
+        name.setText("");
+        email.setText("");
+        username.setText("");
+        age.setText("");
+        dob.setText("");
+
+        name.requestFocus();
+    }
+
     public boolean isValid(String field, String fieldName) {
         boolean isValid = false;
 
@@ -112,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     }
                 }
             }
-            if (fieldName == "dateOfBirth") {
+            if (fieldName == "date of birth") {
                 DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 LocalDateTime now = LocalDateTime.now();
 
@@ -196,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         if (nameIsValid) emailIsValid = isValid(emailField, "email");
         if (emailIsValid) usernameIsValid = isValid(usernameField, "username");
         if (usernameIsValid) ageIsValid = isValid(ageField, "age");
-        if (ageIsValid) dateOfBirthIsValid = isValid(dateOfBirthField, "dateOfBirth");
+        if (ageIsValid) dateOfBirthIsValid = isValid(dateOfBirthField, "date of birth");
 
         if (nameIsValid && emailIsValid && usernameIsValid && ageIsValid && dateOfBirthIsValid) {
             Intent intent = new Intent(this, WeekTwoShowReportActivity.class);
