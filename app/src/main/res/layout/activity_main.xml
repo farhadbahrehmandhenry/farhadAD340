@@ -26,36 +26,32 @@
 
         <EditText
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="15"
             android:hint="@string/name"
             android:inputType="textPersonName"
             android:textSize="@dimen/textSize14" />
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="15"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textSize="@dimen/textSize14" />
 
         <EditText
             android:id="@+id/username"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="15"
             android:hint="@string/username"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:textSize="@dimen/textSize14" />
 
         <EditText
             android:id="@+id/age"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="15"
             android:hint="@string/age"
             android:inputType="number"
             android:textSize="@dimen/textSize14" />
@@ -72,14 +68,15 @@
                 android:layout_gravity="left"
                 android:layout_weight="1"
                 android:hint="@string/date_of_birth_mm_dd_yyyy"
-                android:textSize="@dimen/textSize14" />
+                android:inputType="text"
+                android:textSize="@dimen/textSize12" />
 
             <ImageButton
                 android:id="@+id/dateOfBirth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:background="#01579B"
+                android:background="@color/blue"
                 app:srcCompat="@android:drawable/ic_menu_today"
                 android:onClick="showCalendar"
                 />
@@ -98,11 +95,3 @@
 
     </LinearLayout>
 </LinearLayout>
-
-
-
-
-
-
-
-

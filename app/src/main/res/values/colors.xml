@@ -6,4 +6,5 @@
     <color name="weekTwoBackground">#045255</color>
     <color name="registerButton">#08969C</color>
     <color name="dateOfBirthButton">#006064</color>
+    <color name="blue">#01579B</color>
 </resources>
