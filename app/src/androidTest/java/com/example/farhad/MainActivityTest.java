@@ -29,6 +29,7 @@ public class MainActivityTest {
     public ActivityTestRule<MainActivity> activityTestRule =
             new ActivityTestRule<>(MainActivity.class);
 
+    //tests
     @Test
     public void hadText() {
         onView(withId(R.id.title)).check(matches(withText(R.string.bahrehmand_farhad_04_22_2020)));
