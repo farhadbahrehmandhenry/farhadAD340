@@ -16,19 +16,19 @@ public class WeekTwoShowReportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_week_two_show_report);
 
         report = findViewById(R.id.report);
-        StringBuilder msg = new StringBuilder("Thanks for Signing Up ");
+        StringBuilder msg = new StringBuilder(getString(R.string.thanks));
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
         String userName = "";
 
         if (b != null) {
-            if (b.containsKey(Constant.KEY_NAME)) {
-                userName = b.getString(Constant.KEY_NAME);
+            if (b.containsKey(Constant.KEY_USERNAME)) {
+                userName = b.getString(Constant.KEY_USERNAME);
             }
         }
 
-        msg.append(userName).append("!");
+        msg.append(userName).append(getString(R.string.exclamation));
         report.setText(msg);
     }
 

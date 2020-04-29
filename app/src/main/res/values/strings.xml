@@ -19,5 +19,20 @@
     <string name="testTitle">Bahrehmand, Farhad 04-22-2020</string>
     <string name="date_of_birth_title">Date of Birth:</string>
     <string name="date_of_birth_mm_dd_yyyy">Date of Birth (mm-dd-yyyy)</string>
+    <string name="required">\ is required\</string>
+    <string name="wrongFormat">\ is in wrong format\</string>
+    <string name="shouldBeANumber">\ should be a number\</string>
+    <string name="tooYoung">Sorry!! you are too young</string>
+    <string name="tooOld">Wow!!! you look much younger, are you sure about your age</string>
+    <string name="dob">date of birth</string>
+    <string name="dateFormat">dd/MM/yyyy</string>
+    <string name="slash">/</string>
+    <string name="dash">-</string>
+    <string name="zero">0</string>
+    <string name="ageNotMatched">\your age is not matched with your date of birth, calendar says you are \</string>
+    <string name="badFormat">seems one of the fields have wrong format</string>
+    <string name="signup">you are close to sign up!!</string>
+    <string name="thanks">\Thanks for Signing Up \</string>
+    <string name="exclamation">!</string>
 
 </resources>
