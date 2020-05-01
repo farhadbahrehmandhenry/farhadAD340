@@ -23,7 +23,7 @@
     <string name="wrongFormat">\ is in wrong format\</string>
     <string name="shouldBeANumber">\ should be a number\</string>
     <string name="tooYoung">Sorry!! you are too young</string>
-    <string name="tooOld">Wow!!! you look much younger, are you sure about your age</string>
+    <string name="tooOld">too old</string>
     <string name="dob">date of birth</string>
     <string name="dateFormat">dd/MM/yyyy</string>
     <string name="slash">/</string>

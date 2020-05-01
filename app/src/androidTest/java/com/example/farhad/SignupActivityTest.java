@@ -88,7 +88,6 @@ public class SignupActivityTest {
         onView(withId(R.id.name)).perform(typeText("farhad"), closeSoftKeyboard());
         onView(withId(R.id.email)).perform(typeText("farhad@gmail.com"), closeSoftKeyboard());
         onView(withId(R.id.username)).perform(typeText("farhad1982"), closeSoftKeyboard());
-        onView(withId(R.id.age)).perform(typeText(""), closeSoftKeyboard());
 
         onView(withId(R.id.signup)).perform(click());
 
@@ -123,7 +122,7 @@ public class SignupActivityTest {
         onView(withId(R.id.signup)).perform(click());
 
         SignupActivity activity = activityTestRule.getActivity();
-        onView(withText("Wow!!! you look much younger, are you sure about your age")).
+        onView(withText("too old")).
                 inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
                 check(matches(isDisplayed()));
     }
