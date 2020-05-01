@@ -181,18 +181,6 @@ public class SignupActivity extends AppCompatActivity implements DatePickerDialo
         if (savedInstanceState.containsKey(Constant.KEY_DATE_OF_BIRTH)) {
             dob.setText(savedInstanceState.getString(Constant.KEY_DATE_OF_BIRTH));
         }
-        if (savedInstanceState.containsKey(Constant.KEY_NAME)) {
-            name.setText(savedInstanceState.getString(Constant.KEY_NAME));
-        }
-        if (savedInstanceState.containsKey(Constant.KEY_EMAIL)) {
-            email.setText(savedInstanceState.getString(Constant.KEY_EMAIL));
-        }
-        if (savedInstanceState.containsKey(Constant.KEY_USERNAME)) {
-            username.setText(savedInstanceState.getString(Constant.KEY_USERNAME));
-        }
-        if (savedInstanceState.containsKey(Constant.KEY_AGE)) {
-            age.setText(savedInstanceState.getString(Constant.KEY_AGE));
-        }
     }
 
     @Override
@@ -200,10 +188,6 @@ public class SignupActivity extends AppCompatActivity implements DatePickerDialo
         super.onSaveInstanceState(outState);
 
         outState.putString(Constant.KEY_DATE_OF_BIRTH, dob.getText().toString());
-        outState.putString(Constant.KEY_NAME, name.getText().toString());
-        outState.putString(Constant.KEY_EMAIL, email.getText().toString());
-        outState.putString(Constant.KEY_USERNAME, username.getText().toString());
-        outState.putString(Constant.KEY_AGE, age.getText().toString());
     }
 
     public void validateEmail(String fieldName) {

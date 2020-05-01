@@ -48,17 +48,6 @@ public class SignupActivityTest {
     }
 
 //    @Test
-//    public void validatesSpaceName() {
-//        onView(withId(R.id.name)).perform(typeText("     "), closeSoftKeyboard());
-//        onView(withId(R.id.signup)).perform(click());
-//
-//        SignupActivity activity = activityTestRule.getActivity();
-//        onView(withText("name is required")).
-//                inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
-//                check(matches(isDisplayed()));
-//    }
-
-//    @Test
 //    public void validatesEmail() {
 //        onView(withId(R.id.name)).perform(typeText("farhad"), closeSoftKeyboard());
 //        onView(withId(R.id.email)).perform(typeText("farhad"), closeSoftKeyboard());
@@ -124,8 +113,8 @@ public class SignupActivityTest {
 //
 //        SignupActivity activity = activityTestRule.getActivity();
 //        onView(withText("too old")).
-//                inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
-//                check(matches(isDisplayed()));
+//        inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
+//        check(matches(isDisplayed()));
 //    }
 
     @Test
