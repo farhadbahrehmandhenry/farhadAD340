@@ -32,7 +32,11 @@
     <string name="ageNotMatched">\your age is not matched with your date of birth, calendar says you are \</string>
     <string name="badFormat">seems one of the fields have wrong format</string>
     <string name="signup">you are close to sign up!!</string>
-    <string name="thanks">\Thanks for Signing Up \</string>
+    <string name="thanks">\Thanks for Signing Up!\</string>
+    <string name="hello">\Hello \</string>
     <string name="exclamation">!</string>
-
+    <string name="signupbtn">Sign Up</string>
+    <string name="bahrehmand_farhad_04_30_2020">Bahrehmand, Farhad 04-30-2020</string>
+    <string name="occupation">Occupation</string>
+    <string name="description">tell us a little bit about yourself</string>
 </resources>

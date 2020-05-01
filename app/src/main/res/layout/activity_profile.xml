@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/blue"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginStart="@dimen/margin16"
+        android:background="@color/cardview_shadow_end_color"
+        android:onClick="backToForm"
+        android:paddingLeft="@dimen/padding12"
+        android:paddingRight="@dimen/padding12"
+        app:srcCompat="@drawable/arrow_back"/>
+
+    <TextView
+        android:id="@+id/greet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginTop="@dimen/margin60"
+        android:layout_marginStart="@dimen/margin16"
+        android:textSize="@dimen/textSize24"
+        android:layout_alignTop="@+id/backButton"/>
+    <TextView
+        android:id="@+id/thankYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginTop="@dimen/margin60"
+        android:layout_marginStart="@dimen/margin16"
+        android:textSize="@dimen/textSize18"
+        android:layout_alignTop="@+id/greet" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin100"
+        android:layout_marginStart="@dimen/margin16"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:layout_alignTop="@+id/thankYou"
+        >
+
+        <EditText
+            android:id="@+id/occupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/occupation"
+            android:inputType="text"
+            android:textSize="@dimen/textSize14" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            >
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="@dimen/size300"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:hint="@string/description"
+                android:textSize="@dimen/textSize14"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_shadow_end_color"
+        android:onClick="toDetails"
+        android:paddingLeft="@dimen/padding12"
+        android:paddingRight="@dimen/padding12"
+        android:layout_marginBottom="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin16"
+        app:srcCompat="@drawable/arrow_forward_dark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

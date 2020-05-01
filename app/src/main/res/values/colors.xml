@@ -7,4 +7,6 @@
     <color name="registerButton">#08969C</color>
     <color name="dateOfBirthButton">#006064</color>
     <color name="blue">#01579B</color>
+    <color name="red">#872C10</color>
+    <color name="white">#DFE0E1</color>
 </resources>

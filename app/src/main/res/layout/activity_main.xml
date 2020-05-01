@@ -1,97 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/weekTwoBackground"
+    android:background="@drawable/background"
     tools:context=".MainActivity"
-    android:gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <LinearLayout
-        android:id="@+id/secondLayout"
+    <ImageButton
+        android:id="@+id/goToSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin16"
+        android:layout_marginEnd="@dimen/margin16"
+        android:background="@color/cardview_shadow_end_color"
+        android:onClick="goToSignup"
+        android:paddingLeft="@dimen/padding12"
+        android:paddingRight="@dimen/padding12"
+        app:srcCompat="@drawable/signup_red"/>
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin20"
-            android:text="@string/bahrehmand_farhad_04_22_2020"
-            android:textSize="@dimen/textSize14" />
+    <TextView
+        android:id="@+id/projectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:text="@string/bahrehmand_farhad_04_30_2020"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/margin16"
+        />
 
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/name"
-            android:inputType="textPersonName"
-            android:textSize="@dimen/textSize14" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:textSize="@dimen/textSize14" />
-
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/username"
-            android:inputType="text"
-            android:textSize="@dimen/textSize14" />
-
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/age"
-            android:inputType="number"
-            android:textSize="@dimen/textSize14" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/dateOfBirthText"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:hint="@string/date_of_birth_mm_dd_yyyy"
-                android:inputType="text"
-                android:textSize="@dimen/textSize12" />
-
-            <ImageButton
-                android:id="@+id/dateOfBirth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:background="@color/blue"
-                app:srcCompat="@android:drawable/ic_menu_today"
-                android:onClick="showCalendar"
-                />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/signup"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dim30"
-            android:layout_marginTop="@dimen/margin16"
-            android:background="@color/registerButton"
-            android:onClick="validateInput"
-            android:text="@string/register"
-            android:textSize="@dimen/textSize14" />
-
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
