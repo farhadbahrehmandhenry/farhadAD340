@@ -102,20 +102,20 @@ public class SignupActivityTest {
                 check(matches(isDisplayed()));
     }
 
-//    @Test
-//    public void notTooOld() {
-//        onView(withId(R.id.name)).perform(typeText("farhad"), closeSoftKeyboard());
-//        onView(withId(R.id.email)).perform(typeText("farhad@gmail.com"), closeSoftKeyboard());
-//        onView(withId(R.id.username)).perform(typeText("farhad1982"), closeSoftKeyboard());
-//        onView(withId(R.id.age)).perform(typeText(String.valueOf("500")), closeSoftKeyboard());
-//
-//        onView(withId(R.id.signup)).perform(click());
-//
-//        SignupActivity activity = activityTestRule.getActivity();
-//        onView(withText("too old")).
-//        inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
-//        check(matches(isDisplayed()));
-//    }
+    @Test
+    public void notTooOld() {
+        onView(withId(R.id.name)).perform(typeText("farhad"), closeSoftKeyboard());
+        onView(withId(R.id.email)).perform(typeText("farhad@gmail.com"), closeSoftKeyboard());
+        onView(withId(R.id.username)).perform(typeText("farhad1982"), closeSoftKeyboard());
+        onView(withId(R.id.age)).perform(typeText(String.valueOf("121")), closeSoftKeyboard());
+
+        onView(withId(R.id.signup)).perform(click());
+
+        SignupActivity activity = activityTestRule.getActivity();
+        onView(withText("too old")).
+        inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
+        check(matches(isDisplayed()));
+    }
 
     @Test
     public void validatesEmptyDOB() {
