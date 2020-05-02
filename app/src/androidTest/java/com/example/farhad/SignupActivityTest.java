@@ -59,18 +59,18 @@ public class SignupActivityTest {
 //                check(matches(isDisplayed()));
 //    }
 
-    @Test
-    public void validatesUsername() {
-        onView(withId(R.id.name)).perform(typeText("farhad"), closeSoftKeyboard());
-        onView(withId(R.id.email)).perform(typeText("farhad@gmail.com"), closeSoftKeyboard());
-        onView(withId(R.id.username)).perform(typeText(""), closeSoftKeyboard());
-        onView(withId(R.id.signup)).perform(click());
-
-        SignupActivity activity = activityTestRule.getActivity();
-        onView(withText("username is required")).
-                inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
-                check(matches(isDisplayed()));
-    }
+//    @Test
+//    public void validatesUsername() {
+//        onView(withId(R.id.name)).perform(typeText("farhad"), closeSoftKeyboard());
+//        onView(withId(R.id.email)).perform(typeText("farhad@gmail.com"), closeSoftKeyboard());
+//        onView(withId(R.id.username)).perform(typeText(""), closeSoftKeyboard());
+//        onView(withId(R.id.signup)).perform(click());
+//
+//        SignupActivity activity = activityTestRule.getActivity();
+//        onView(withText("username is required")).
+//                inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
+//                check(matches(isDisplayed()));
+//    }
 
 //    @Test
 //    public void validatesAge() {
