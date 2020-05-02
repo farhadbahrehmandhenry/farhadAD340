@@ -178,6 +178,9 @@ public class SignupActivityTest {
             onView(withId(R.id.signup)).perform(click());
             intended(hasComponent(ProfileActivity.class.getName()));
             intended(hasExtra(Constant.KEY_USERNAME, "farhad1982"));
+            intended(hasExtra(Constant.KEY_NAME, "farhad"));
+            intended(hasExtra(Constant.KEY_AGE, "37"));
+            intended(hasExtra(Constant.KEY_DATE_OF_BIRTH, "06-10-1982"));
         } finally {
             Intents.release();
         }

@@ -94,11 +94,9 @@ public class ProfileActivity extends AppCompatActivity {
         if (occupationIsValid && descriptionIsValid) {
             Intent intent = new Intent(this, ProfileDetailActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putString(Constant.KEY_USERNAME, userName);
+
             bundle.putString(Constant.KEY_NAME, name);
-            bundle.putString(Constant.KEY_EMAIL, email);
             bundle.putString(Constant.KEY_AGE, age);
-            bundle.putString(Constant.KEY_DATE_OF_BIRTH, dob);
             bundle.putString(Constant.KEY_OCCUPATION, occupationField);
             bundle.putString(Constant.KEY_DESCRIPTION, descriptionField);
 
