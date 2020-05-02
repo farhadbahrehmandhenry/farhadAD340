@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/profileImage"
         android:layout_width="@dimen/size410"
         android:layout_height="@dimen/size535"
         android:scaleType="fitCenter"
@@ -25,7 +25,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/imageView2"
+        android:layout_below="@id/profileImage"
         android:orientation="vertical"
         android:gravity="start">
 
