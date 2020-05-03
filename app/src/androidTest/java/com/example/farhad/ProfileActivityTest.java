@@ -1,5 +1,6 @@
 package com.example.farhad;
 
+import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
@@ -10,13 +11,16 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.intent.Intents.intended;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class ProfileActivityTest {
     @Rule
@@ -52,5 +56,22 @@ public class ProfileActivityTest {
         onView(withText("description is required")).
                 inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
                 check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void goToDetails() {
+        onView(withId(R.id.occupation)).perform(typeText("programmer"), closeSoftKeyboard());
+        onView(withId(R.id.description)).perform(typeText("helloooooo"), closeSoftKeyboard());
+
+        try {
+            Intents.init();
+            onView(withId(R.id.nextButton)).perform(click());
+            intended(hasComponent(ProfileDetailActivity.class.getName()));
+            intended(hasExtra("occupation", "programmer"));
+            intended(hasExtra("description", "helloooooo"));
+
+        } finally {
+            Intents.release();
+        }
     }
 }

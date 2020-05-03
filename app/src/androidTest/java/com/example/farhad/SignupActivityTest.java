@@ -1,8 +1,11 @@
 package com.example.farhad;
 
+import android.widget.DatePicker;
+
 import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
+import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -16,6 +19,7 @@ import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
@@ -184,5 +188,11 @@ public class SignupActivityTest {
         } finally {
             Intents.release();
         }
+    }
+
+    @Test
+    public void testShiftRepeaterTaskToTomorrow() {
+        onView(withId(R.id.dateOfBirth)).perform(click());
+        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).check(matches(isDisplayed()));
     }
 }
