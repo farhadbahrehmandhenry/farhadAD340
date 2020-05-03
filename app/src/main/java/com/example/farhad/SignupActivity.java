@@ -199,40 +199,24 @@ public class SignupActivity extends AppCompatActivity implements DatePickerDialo
     }
 
     public boolean validateAge(String field, String fieldName) {
-        boolean isValidAge = true;
         boolean isValid = false;
 
-        try {
-            Integer.parseInt(field);
-            isValidAge = true;
-        } catch (NumberFormatException ex) {
-            StringBuilder msg = new StringBuilder(fieldName).append(getString(R.string.shouldBeANumber));
+        int age = Integer.parseInt(field);
 
-            Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+        if (age < 18) {
+            Toast toast = Toast.makeText(this, R.string.tooYoung, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.TOP, 0, 100);
             toast.show();
-
-            isValidAge = false;
-        }
-
-        if (isValidAge) {
-            int age = Integer.parseInt(field);
-
-            if (age < 18) {
-                Toast toast = Toast.makeText(this, R.string.tooYoung, Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.TOP, 0, 100);
-                toast.show();
-            } else if (age > 120) {
-                Toast toast = Toast.makeText(
-                        this,
-                        R.string.tooOld,
-                        Toast.LENGTH_SHORT
-                );
-                toast.setGravity(Gravity.TOP, 0, 100);
-                toast.show();
-            } else {
-                isValid = true;
-            }
+        } else if (age > 120) {
+            Toast toast = Toast.makeText(
+                    this,
+                    R.string.tooOld,
+                    Toast.LENGTH_SHORT
+            );
+            toast.setGravity(Gravity.TOP, 0, 100);
+            toast.show();
+        } else {
+            isValid = true;
         }
 
         return isValid;
