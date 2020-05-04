@@ -236,8 +236,4 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         return isValid;
     }
-
-    public void backToHome(View view) {
-        finish();
-    }
 }
