@@ -1,6 +1,7 @@
 package com.example.farhad;
 
-import androidx.test.espresso.intent.Intents;
+import android.content.Intent;
+
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
@@ -8,18 +9,9 @@ import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.intent.Intents.intended;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra;
-import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertTrue;
 
 public class ProfileActivityTest {
@@ -36,42 +28,43 @@ public class ProfileActivityTest {
     }
 
     @Test
-    public void validatesOccupation() {
-        onView(withId(R.id.occupation)).perform(typeText(""), closeSoftKeyboard());
-        onView(withId(R.id.nextButton)).perform(click());
-
-        ProfileActivity activity = activityTestRule.getActivity();
-        onView(withText("occupation is required")).
-                inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
-                check(matches(isDisplayed()));
+    public void hasImage() {
+        onView(withId(R.id.profileImage)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void validatesDescription() {
-        onView(withId(R.id.occupation)).perform(typeText("programmer"), closeSoftKeyboard());
-        onView(withId(R.id.description)).perform(typeText(""), closeSoftKeyboard());
-        onView(withId(R.id.nextButton)).perform(click());
+    public void hasName() {
+        Intent i = new Intent();
+        i.putExtra("name", "farhad");
+        activityTestRule.launchActivity(i);
 
-        ProfileActivity activity = activityTestRule.getActivity();
-        onView(withText("description is required")).
-                inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
-                check(matches(isDisplayed()));
+        onView(withId(R.id.name)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void goToDetails() {
-        onView(withId(R.id.occupation)).perform(typeText("programmer"), closeSoftKeyboard());
-        onView(withId(R.id.description)).perform(typeText("helloooooo"), closeSoftKeyboard());
+    public void hasAge() {
+        Intent i = new Intent();
+        i.putExtra("age", "20");
+        activityTestRule.launchActivity(i);
 
-        try {
-            Intents.init();
-            onView(withId(R.id.nextButton)).perform(click());
-            intended(hasComponent(ProfileDetailActivity.class.getName()));
-            intended(hasExtra("occupation", "programmer"));
-            intended(hasExtra("description", "helloooooo"));
+        onView(withId(R.id.age)).check(matches(isDisplayed()));
+    }
 
-        } finally {
-            Intents.release();
-        }
+    @Test
+    public void hasOccupation() {
+        Intent i = new Intent();
+        i.putExtra("occupation", "programmer");
+        activityTestRule.launchActivity(i);
+
+        onView(withId(R.id.occupation)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void hasDescription() {
+        Intent i = new Intent();
+        i.putExtra("description", "heloooo!!!");
+        activityTestRule.launchActivity(i);
+
+        onView(withId(R.id.description)).check(matches(isDisplayed()));
     }
 }
