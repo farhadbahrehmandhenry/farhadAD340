@@ -39,4 +39,8 @@
     <string name="bahrehmand_farhad_04_30_2020">Bahrehmand, Farhad 04-30-2020</string>
     <string name="occupation">Occupation</string>
     <string name="description">tell us a little bit about yourself</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="matches">Matches</string>
+    <string name="settings">settings</string>
 </resources>
