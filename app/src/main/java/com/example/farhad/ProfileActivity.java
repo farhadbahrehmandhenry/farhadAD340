@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -40,10 +42,10 @@ public class ProfileActivity extends AppCompatActivity {
             }
         }
 
-//        ProfileFragment profile = new ProfileFragment();
-//        profile.setArguments(bundle);
-//        FragmentManager manager = getSupportFragmentManager();
-//        FragmentTransaction t  = manager.beginTransaction();
+        ProfileFragment profile = new ProfileFragment();
+        profile.setArguments(bundle);
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction t  = manager.beginTransaction();
 //
 //        t.add(R.id.frag, profile);
 //        t.commit();
