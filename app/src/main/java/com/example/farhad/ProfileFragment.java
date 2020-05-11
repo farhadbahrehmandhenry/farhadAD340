@@ -39,22 +39,17 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        String[] data = ((ProfileActivity) getActivity()).getExtraData();
+
         profileName = view.findViewById(R.id.name);
         profileAge = view.findViewById(R.id.age);
         profileOccupation = view.findViewById(R.id.occupation);
         profileDescription = view.findViewById(R.id.description);
 
-        Bundle bundle=getArguments();
-
-        name = bundle.getString(Constant.KEY_NAME);
-        age = bundle.getString(Constant.KEY_AGE);
-        occupation = bundle.getString(Constant.KEY_OCCUPATION);
-        description = bundle.getString(Constant.KEY_DESCRIPTION);
-
-        profileName.setText(name);
-        profileAge.setText(age);
-        profileOccupation.setText(occupation);
-        profileDescription.setText(description);
+        profileName.setText(data[0]);
+        profileAge.setText(data[1]);
+        profileOccupation.setText(data[2]);
+        profileDescription.setText(data[3]);
 
         return view;
     }
