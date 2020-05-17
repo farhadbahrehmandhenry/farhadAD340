@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/fourdp"
+    android:layout_margin="@dimen/fivedp"
+    app:cardElevation="@dimen/threedp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp600"
+            android:id="@+id/matchImage">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/matchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp520"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp22"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/loke"
+            android:layout_below="@id/matchImage"
+            android:layout_marginTop="@dimen/fivedp"
+            android:id="@+id/likeButton"
+            >
+        </ImageButton>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
