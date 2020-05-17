@@ -13,10 +13,6 @@ public class ProfileFragment extends Fragment {
     TextView profileAge;
     TextView profileOccupation;
     TextView profileDescription;
-    String name;
-    String age;
-    String occupation;
-    String description;
 
     private int position;
 
