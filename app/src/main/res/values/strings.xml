@@ -41,6 +41,11 @@
     <string name="description">tell us a little bit about yourself</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="matches">Matches</string>
+    <string name="matches">matches</string>
     <string name="settings">settings</string>
+    <string name="add_match">Add Match</string>
+    <string name="UNLIKE">UNLIKE</string>
+    <string name="LIKE">LIKE</string>
+    <string name="LikeMsg">You LIKED: </string>
+    <string name="UnlikedMsg">You UNLIKED: </string>
 </resources>

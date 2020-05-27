@@ -10,8 +10,8 @@
         android:layout_width="@dimen/size410"
         android:layout_height="@dimen/size535"
         android:scaleType="fitCenter"
-        android:layout_marginRight="0dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/size0"
+        android:layout_marginLeft="@dimen/size10"
         app:srcCompat="@drawable/profile_pic" />
 
     <ImageButton
