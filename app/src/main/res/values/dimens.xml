@@ -29,4 +29,7 @@
     <dimen name="dp520">520dp</dimen>
     <dimen name="dp20">20dp</dimen>
     <dimen name="sp22">22sp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="size0">0dp</dimen>
+    <dimen name="size10">10dp</dimen>
 </resources>

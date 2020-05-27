@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp600"
             android:id="@+id/matchImage">
-
         </ImageView>
 
         <TextView
@@ -30,14 +29,13 @@
             android:textSize="@dimen/sp22"
             android:textStyle="bold" />
 
-        <ImageButton
+        <Button
+            android:id="@+id/likeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/loke"
-            android:layout_below="@id/matchImage"
-            android:layout_marginTop="@dimen/fivedp"
-            android:id="@+id/likeButton"
-            >
-        </ImageButton>
+            android:layout_below="@+id/matchImage"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="?attr/colorPrimary"
+            android:text="@string/LIKE" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
