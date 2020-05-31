@@ -6,9 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import java.util.List;
 
 public class SettingsFragment extends Fragment {
     private int position;
+    private SettingViewModel settingsviewModel;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -29,6 +34,13 @@ public class SettingsFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         position = getArguments().getInt("pos");
+        settingsviewModel = new ViewModelProvider(this).get(SettingViewModel.class);
+        settingsviewModel.getAllSettings().observe(this, new Observer<List<Settings>>() {
+            @Override
+            public void onChanged(List<Settings> settings) {
+
+            }
+        });
     }
 
     @Override
