@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycleView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsFragment">
+    android:clipToPadding="false"
+    android:scrollbars="vertical"
+    tools:listitem="@layout/setting_item" >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/settings" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        layoutMana-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic__add"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_margin="@dimen/textSize24"-->
+<!--        android:id="@+id/add">-->
 
-</FrameLayout>
+<!--    </com.google.android.material.floatingactionbutton.FloatingActionButton>-->
+</androidx.recyclerview.widget.RecyclerView>

@@ -9,11 +9,11 @@ public class Settings {
     private int id;
     private int dailyMatchesReminderTime;
     private int maximumDistanceSearch;
-    private String gender;
-    private String accountType;
-    private String ageRange;
+    private int gender;
+    private int accountType;
+    private int ageRange;
 
-    public Settings(int dailyMatchesReminderTime, int maximumDistanceSearch, String gender, String accountType, String ageRange) {
+    public Settings(int dailyMatchesReminderTime, int maximumDistanceSearch, int gender, int accountType, int ageRange) {
         this.dailyMatchesReminderTime = dailyMatchesReminderTime;
         this.maximumDistanceSearch = maximumDistanceSearch;
         this.gender = gender;
@@ -37,15 +37,15 @@ public class Settings {
         return maximumDistanceSearch;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public String getAccountType() {
+    public int getAccountType() {
         return accountType;
     }
 
-    public String getAgeRange() {
+    public int getAgeRange() {
         return ageRange;
     }
 }

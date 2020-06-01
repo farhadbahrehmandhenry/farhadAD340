@@ -20,6 +20,8 @@ public class SettingViewModel extends AndroidViewModel {
         allSettings = repository.getAllSettings();
     }
 
+    public LiveData<List<Settings>> getSettings() { return allSettings; }
+
     public void insert(Settings settings) {
         repository.insert(settings);
     }

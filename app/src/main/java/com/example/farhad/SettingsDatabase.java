@@ -9,7 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Settings.class}, version = 1)
+@Database(entities = {Settings.class}, version = 3)
 public abstract class SettingsDatabase extends RoomDatabase {
     private static SettingsDatabase instance;
     public abstract SettingsDao settingsDao();
@@ -42,9 +42,8 @@ public abstract class SettingsDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            settingsDao.insert(new Settings(2, 2, "male", "public", "18-30"));
+            settingsDao.insert(new Settings(2, 2, 0, 0, 18));
             return null;
         }
     }
-
 }
