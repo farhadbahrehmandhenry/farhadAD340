@@ -67,7 +67,6 @@ public class MatchesFragment extends Fragment {
     }
 
     public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
-        // Set numbers of List in RecyclerView.
         private int length;
         private ArrayList<Match> matches;
         private FirebaseMatchesViewModel viewModel;

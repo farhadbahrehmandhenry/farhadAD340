@@ -48,4 +48,9 @@
     <string name="LIKE">LIKE</string>
     <string name="LikeMsg">You LIKED: </string>
     <string name="UnlikedMsg">You UNLIKED: </string>
+    <string name="daily_matches_reminder_time">Daily Matches Reminder Time:</string>
+    <string name="maximum_distance_search_in_miles">Maximum Distance Search (in Miles):</string>
+    <string name="gender">Gender</string>
+    <string name="private_public_account">Private/Public Account</string>
+    <string name="interested_age_range">Interested Age Range</string>
 </resources>

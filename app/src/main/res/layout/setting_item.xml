@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="@dimen/margin10"
+    android:layout_marginStart="@dimen/margin10"
+    android:layout_marginTop="@dimen/margin10">
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin10">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reminder"
+            android:spinnerMode="dropdown">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reminder"
+            android:id="@+id/distance"
+            android:text="1">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gender"
+            android:layout_below="@+id/distance"
+            android:layout_alignParentEnd="true"
+            android:text="1">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/accountType"
+            android:layout_below="@+id/gender"
+            android:layout_alignParentEnd="true"
+            android:text="1">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ageRange"
+            android:layout_below="@+id/accountType"
+            android:layout_alignParentEnd="true"
+            android:text="1">
+        </TextView>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
