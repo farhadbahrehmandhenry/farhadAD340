@@ -1,6 +1,7 @@
 package com.example.farhad;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -20,8 +21,6 @@ public class SettingViewModel extends AndroidViewModel {
         allSettings = repository.getAllSettings();
     }
 
-    public LiveData<List<Settings>> getSettings() { return allSettings; }
-
     public void insert(Settings settings) {
         repository.insert(settings);
     }
@@ -31,6 +30,8 @@ public class SettingViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Settings>> getAllSettings() {
+        Log.d("zasdasdasd", String.valueOf(allSettings));
+
         return allSettings;
     }
 }

@@ -42,7 +42,7 @@ public abstract class SettingsDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            settingsDao.insert(new Settings(2, 2, 0, 0, 18));
+            settingsDao.insert(new Settings(2, 2, 12, 0, 18));
             return null;
         }
     }

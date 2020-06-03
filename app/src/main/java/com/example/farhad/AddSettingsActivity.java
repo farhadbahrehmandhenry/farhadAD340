@@ -10,7 +10,7 @@ import android.widget.NumberPicker;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddSettingsActivity extends AppCompatActivity {
-    public static final String Extra_REMINDER = "com.example.farhad.Extra_TITLE";
+    public static final String Extra_REMINDER = "com.example.farhad.Extra_REMINDER";
     public static final String Extra_DISTANCE = "com.example.farhad.Extra_DISTANCE";
     public static final String Extra_GENDER = "com.example.farhad.Extra_GENDER";
     public static final String Extra_ACCOUNT = "com.example.farhad.Extra_ACCOUNT";
