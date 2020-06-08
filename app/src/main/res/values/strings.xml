@@ -53,4 +53,47 @@
     <string name="gender">Gender</string>
     <string name="private_public_account">Private/Public Account</string>
     <string name="interested_age_range">Interested Age Range</string>
+    <string name="max_distance_error">max distance cannot be less than 1</string>
+
+    <string name="date_WorkedOn">04/24/2020</string>
+    <string name="last_first_name">Kunte, Jenny</string>
+
+    <string name="signUpButton">Sign Up!</string>
+    <string name="AssignmentTwo">Kunte, Jenny 04–25-2020</string>
+    <string name="birth_mm_dd_yyyy">birth_mm_dd_yyyy</string>
+    <string name="welcome_second_Activity">Welcome!</string>
+    <string name="occupationHint">Occupation</string>
+    <string name="Occupation">Occupation</string>
+    <string name="assignmentThree">Kunte, Jenny 05–03–2020</string>
+    <string name="go_back_second">Go back!</string>
+    <string name="birthdayHint">Birthday</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="ageSecondLayout">AGE</string>
+    <string name="fontFamily">sans-serif-light</string>
+    <string name="fullName">FullName:</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="assignment4">Kunte, Jenny Date: 05.17.2020 Changes</string>
+    <string name="assignment5">Kunte, Jenny Date: 05.17.2020</string>
+    <string name="item_lists">Lists</string>
+    <string name="signUpMessage">\"Thanks for Signing Up! \"</string>
+    <string name="pofileFragment">Profile</string>
+    <string name="matchesFragment">Matches</string>
+    <string name="settingsFragment">Settings</string>
+    <string name="position">POSITION</string>
+    <string name="assignment6">Kunte Jenny, Date: 05.21.2020</string>
+    <string name="daily_match_reminder">Daily Match Reminder</string>
+    <string name="this_would_be_match_reminder">This would be match reminder</string>
+    <string name="this_would_be_max_distance_in_miles">This would be max distance in Miles</string>
+    <string name="max_distance_search_in_miles_info">Max Distance Search in Miles</string>
+    <string name="age_range">Age Range</string>
+    <string name="hint_type_of_account">Type Of Account</string>
+    <string name="gender_pref_info">Gender Preference</string>
+    <string name="account_type_text">Account Type</string>
+    <string name="assignment7">Kunte Jenny, Date: 05.31.2020</string>
+    <string name="min_age">Min. Age</string>
+    <string name="max_age">Max Age</string>
+    <string name="Updated">Updated</string>
+    <string name="save">save</string>
+    <string name="reminder">reminder</string>
 </resources>

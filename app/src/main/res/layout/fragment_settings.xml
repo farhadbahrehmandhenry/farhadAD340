@@ -1,29 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<FrameLayout-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    >-->
-    <androidx.recyclerview.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/recycleView"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:scrollbars="vertical">
+        android:layout_marginStart="@dimen/dim30"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dim30"
+        tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/account_Type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="account type - public" />
+                <Switch
+                    android:id="@+id/account_type_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim1"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="@color/grey"/>
+
+                <EditText
+                    android:id="@+id/daily_match_reminder_ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/reminder"
+                    android:textSize="@dimen/dimText20"
+                    android:textColor="@color/black"/>
+
+                <TimePicker
+                    android:id="@+id/match_reminder_setting_Id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numbersBackgroundColor="@color/colorAccent"
+                    android:adjustViewBounds="true"
+                    android:timePickerMode="spinner"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim1"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="@color/grey"/>
+
+                <TextView
+                    android:id="@+id/max_distance_ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/max_distance_search_in_miles_info" />
+
+                <NumberPicker
+                    android:id="@+id/distance_value"
+                    android:layout_width="@dimen/dime_width120"
+                    android:layout_height="@dimen/dim30" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim1"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="@color/grey"/>
 
 
-    </androidx.recyclerview.widget.RecyclerView>
+                <TextView
+                    android:id="@+id/min_age_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/min_age" />
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/ic__add"-->
-<!--        android:layout_gravity="bottom|end"-->
-<!--        android:layout_margin="@dimen/textSize24"-->
-<!--        android:id="@+id/add">-->
+                <NumberPicker
+                    android:id="@+id/min_age_value"
+                    android:layout_width="@dimen/dime_width120"
+                    android:layout_height="60dp" />
 
-<!--    </com.google.android.material.floatingactionbutton.FloatingActionButton>-->
-<!--</FrameLayout>-->
+                <TextView
+                    android:id="@+id/max_age_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/max_age" />
+
+                <NumberPicker
+                    android:id="@+id/max_age_value"
+                    android:layout_width="@dimen/dime_width120"
+                    android:layout_height="60dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim1"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="@color/grey"/>
+
+                <TextView
+                    android:id="@+id/gender_preference_ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gender_pref_info" />
+
+                <Spinner
+                    android:id="@+id/gender_spinner_ID"
+                    android:layout_width="@dimen/dime_width120"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim1"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="@color/grey"/>
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingStart="@dimen/margin20"
+                android:text="@string/save"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</FrameLayout>

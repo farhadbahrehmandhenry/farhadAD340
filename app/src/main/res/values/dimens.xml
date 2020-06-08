@@ -2,16 +2,10 @@
 <resources>
     <dimen name="box_inset_layout_padding">0dp</dimen>
     <dimen name="inner_frame_layout_padding">5dp</dimen>
-    <dimen name="marginBottom">30dp</dimen>
-    <dimen name="textSize12">12sp</dimen>
-    <dimen name="margin">24dp</dimen>
-    <dimen name="textSize18">18sp</dimen>
     <dimen name="padding12">12dp</dimen>
-    <dimen name="margin8">8dp</dimen>
-    <dimen name="margin20">20dp</dimen>
+
     <dimen name="textSize14">14sp</dimen>
-    <dimen name="margin16">16dp</dimen>
-    <dimen name="dim30">30dp</dimen>
+
     <dimen name="margin100">100dp</dimen>
     <dimen name="margin60">60dp</dimen>
     <dimen name="margin150">150dp</dimen>
@@ -27,9 +21,57 @@
     <dimen name="threedp">3dp</dimen>
     <dimen name="dp600">600dp</dimen>
     <dimen name="dp520">520dp</dimen>
-    <dimen name="dp20">20dp</dimen>
     <dimen name="sp22">22sp</dimen>
     <dimen name="margin10">10dp</dimen>
     <dimen name="size0">0dp</dimen>
     <dimen name="size10">10dp</dimen>
+
+    <dimen name="text_size">24sp</dimen>
+    <dimen name="text_size1">24sp</dimen>
+    <dimen name="text_size3">24sp</dimen>
+    <dimen name="userNameDim">204dp</dimen>
+    <dimen name="text3Dim">272dp</dimen>
+    <dimen name="text4BirthDim">340dp</dimen>
+    <dimen name="text5AgeDim">404dp</dimen>
+    <dimen name="text6Email">472dp</dimen>
+    <dimen name="sizeWelcome">24sp</dimen>
+    <dimen name="marginBottom">35dp</dimen>
+    <dimen name="textSize12">12sp</dimen>
+    <dimen name="textSize18">18sp</dimen>
+    <dimen name="margin16">16dp</dimen>
+    <dimen name="margin">24dp</dimen>
+    <dimen name="padding15">15dp</dimen>
+    <dimen name="padding20">20dp</dimen>
+    <dimen name="margin8">10dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="dim30">30dp</dimen>
+    <dimen name="marginTop">5dp</dimen>
+    <dimen name="secondViewWelcomeTextView">265dp</dimen>
+    <dimen name="secondViewWelcomHeight">68dp</dimen>
+    <dimen name="SecondWelcomeTopMa">108dp</dimen>
+    <dimen name="textSizeWelcome">26sp</dimen>
+    <dimen name="secButtonMarg">172dp</dimen>
+    <dimen name="dim_10">10dp</dimen>
+    <dimen name="textSize20">20sp</dimen>
+    <dimen name="dimTop5">5dp</dimen>
+    <dimen name="dimText30">30sp</dimen>
+    <dimen name="dimText20">20sp</dimen>
+    <dimen name="layoutHeightDim1">1dp</dimen>
+    <dimen name="pictureWidth120">120dp</dimen>
+    <dimen name="MarginTop250">250dp</dimen>
+    <dimen name="dim1">1dp</dimen>
+    <dimen name="dim3">3dp</dimen>
+    <dimen name="dim9">9dp</dimen>
+    <dimen name="height120">120dp</dimen>
+    <dimen name="testDim">320dp</dimen>
+    <dimen name="dimProfileInfoFragment">250dp</dimen>
+    <dimen name="card_height">304dp</dimen>
+    <dimen name="card_title_height">40dp</dimen>
+    <dimen name="cards_button_width">48dp</dimen>
+    <dimen name="cards_button_height">48dp</dimen>
+    <dimen name="card_image_height">200dp</dimen>
+    <dimen name="md_keylines">16dp</dimen>
+    <dimen name="article_subheading">16sp</dimen>
+    <dimen name="dime_width120">120dp</dimen>
+    <dimen name="dp20">20dp</dimen>
 </resources>

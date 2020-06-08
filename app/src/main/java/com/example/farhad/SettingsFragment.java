@@ -1,33 +1,51 @@
 package com.example.farhad;
 
-import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.NumberPicker;
+import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import com.example.farhad.Settings;
+import com.example.farhad.SettingsViewModel;
 
 import java.util.List;
-
-import static android.app.Activity.RESULT_OK;
+import java.util.Objects;
 
 public class SettingsFragment extends Fragment {
-    private int position;
-    public static final int ADD_SETTINGS_REQUEST = 1;
-    private SettingViewModel settingsviewModel;
+    private Integer settingsId = 1;
+    private SettingsViewModel settingsViewModel;
+    private Settings loadedSettings;
+    private NumberPicker minAge;
+    private NumberPicker maxAge;
+    private Integer minAgeLimit = 18;
+    private Integer maxAgeLimit = 120;
+    private Integer defaultMinAge = 18;
+    private Integer defaultMaxAge = 120;
+    NumberPicker distance;
+    EditText ageRange;
+    TimePicker reminder;
+    Switch privacy;
+    Spinner gender;
+    Button save;
+
 
     public SettingsFragment() {
         // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
     public static SettingsFragment newInstance(int position) {
         Bundle bundle = new Bundle();
         bundle.putInt("pos", position);
@@ -40,68 +58,102 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        position = getArguments().getInt("pos");
+
+        settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
+
+        final Observer<Settings> getSettingsObserver = dbSettings -> {
+            loadedSettings = dbSettings;
+
+            if (loadedSettings == null) {
+                loadedSettings = new Settings();
+                loadedSettings.setId(1);
+                loadedSettings.setMatchReminderHour(14);
+                loadedSettings.setMatchReminderMin(0);
+                loadedSettings.setPrivateAccount(false);
+                loadedSettings.setMaxDistance(Settings.getMaxDistance());
+                loadedSettings.setMinAge(18);
+                loadedSettings.setMaxAge(120);
+            }
+
+            this.minAge.setValue(loadedSettings.getMinAge());
+            this.maxAge.setValue(loadedSettings.getMaxAge());
+        };
+
+        settingsViewModel.loadSettingsById(this.getContext(), 1).observe(this, getSettingsObserver);
+        settingsViewModel.loadSettingsById(this.getContext(), 1).getValue();
+    }
+
+    public void updateSettings(View view, Settings settings) {
+        settingsViewModel.updateSettings(this.getContext(), settings);
+        Toast.makeText(view.getContext(), R.string.Updated, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        settingsviewModel = new ViewModelProvider(this).get(SettingViewModel.class);
-        RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_settings, container, false);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setHasFixedSize(true);
 
-//        FloatingActionButton buttonAddNote = recyclerView.findViewById(R.id.add);
-//        buttonAddNote.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), AddSettingsActivity.class);
-//
-//                startActivityForResult(intent, ADD_SETTINGS_REQUEST);
-//            }
-//        });
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
+        distance = view.findViewById(R.id.distance_value);
+        ageRange = view.findViewById(R.id.ageRange);
+        reminder = view.findViewById(R.id.match_reminder_setting_Id);
+        privacy = view.findViewById(R.id.accountType);
+        gender = view.findViewById(R.id.gender);
+        save = view.findViewById(R.id.save);
+        maxAge = view.findViewById(R.id.max_age_value);
+        minAge = view.findViewById(R.id.min_age_value);
 
+        this.minAge = view.findViewById(R.id.min_age_value);
+        this.minAge.setMinValue(minAgeLimit);
+        this.minAge.setMaxValue(maxAgeLimit);
 
-        final SettingsAdapter adapter = new SettingsAdapter();
-        recyclerView.setAdapter(adapter);
-        settingsviewModel = new ViewModelProvider(this).get(SettingViewModel.class);
+        this.maxAge = view.findViewById(R.id.max_age_value);
+        this.maxAge.setMinValue(minAgeLimit);
+        this.maxAge.setMaxValue(maxAgeLimit);
 
-        settingsviewModel.getAllSettings().observe(getViewLifecycleOwner(), new Observer<List<Settings>>() {
+        this.minAge.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onChanged(List<Settings> settings) {
-                adapter.setSettings(settings);
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                loadedSettings.setMinAge(minAge.getValue());
+                updateSettings(view, loadedSettings);
             }
         });
 
-        adapter.setOnItemClickListener(new SettingsAdapter.onItemClickListener() {
+        this.maxAge.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onItemClick(Settings settings) {
-//                Intent intent = new Intent(this, AddEditNoteActivity.class);
-//
-//                intent.putExtras(AddEditSettingsActivity.EXTRA_REMINDER, settings.getAccountType());
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                loadedSettings.setMaxAge(maxAge.getValue());
+                updateSettings(view, loadedSettings);
             }
         });
 
-        return recyclerView;
-    }
+        final Observer<List<Settings>> getSettingsObserver = newSettings -> {
+            if (newSettings == null || newSettings.size() <= 0) {
+                return;
+            }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+            Settings settings = newSettings.get(0);
 
-        if (requestCode == ADD_SETTINGS_REQUEST && resultCode == RESULT_OK) {
-            int reminder = data.getIntExtra(AddSettingsActivity.Extra_REMINDER, 0);
-            int distance = data.getIntExtra(AddSettingsActivity.Extra_DISTANCE, 1);
-            int gender = data.getIntExtra(AddSettingsActivity.Extra_GENDER, 0);
-            int account = data.getIntExtra(AddSettingsActivity.Extra_ACCOUNT, 0);
-            int age = data.getIntExtra(AddSettingsActivity.Extra_AGEGENDER, 18);
+            if (settings == null) {
+                return;
+            }
+        };
 
-            Settings settings = new Settings(reminder, distance, gender, account, age);
-            settingsviewModel.insert(settings);
+        save.setOnClickListener(v -> {
+            Settings settings = new Settings();
 
-            Toast.makeText(getActivity(), "saved", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(getActivity(), "not saved", Toast.LENGTH_SHORT).show();
-        }
+            if (privacy != null && reminder != null && distance != null && minAge != null && maxAge != null && gender != null) {
+                settings.setPrivateAccount(privacy.isChecked());
+                settings.setMatchReminderHour(reminder.getHour());
+                settings.setMatchReminderMin(reminder.getMinute());
+                settings.setMaxDistance(distance.getValue());
+                settings.setMinAge(minAge.getValue());
+                settings.setMaxAge(maxAge.getValue());
+                settings.setGender(String.valueOf(gender.getSelectedItem()));
+            }
+
+            settingsViewModel.insertSettings(view.getContext(), settings);
+        });
+
+        return view;
     }
 }
