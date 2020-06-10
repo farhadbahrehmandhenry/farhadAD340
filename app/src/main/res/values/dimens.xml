@@ -74,4 +74,11 @@
     <dimen name="article_subheading">16sp</dimen>
     <dimen name="dime_width120">120dp</dimen>
     <dimen name="dp20">20dp</dimen>
+    <dimen name="margin24">24dp</dimen>
+    <dimen name="margin72">72dp</dimen>
+    <dimen name="margin95">95dp</dimen>
+    <dimen name="margin120">120dp</dimen>
+    <dimen name="margin40">40dp</dimen>
+    <dimen name="margin200">200dp</dimen>
+    <dimen name="margin50">50dp</dimen>
 </resources>

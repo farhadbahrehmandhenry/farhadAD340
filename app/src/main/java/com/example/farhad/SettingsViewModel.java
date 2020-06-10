@@ -1,61 +1,27 @@
 package com.example.farhad;
 
+import android.app.Application;
 import android.content.Context;
-
-import com.example.farhad.AppDatabase;
-import com.example.farhad.AppDatabaseSingleton;
 import com.example.farhad.Settings;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-//public class SettingsViewModel extends ViewModel {
-//
-//    public LiveData<Settings> loadSettingsById(Context context, Integer id) {
-//        AppDatabase db = AppDatabaseSingleton.getDatabase(context);
-//        return db.settingsDao().loadById(id);
-//    }
-//
-//    public void updateSettings(Context context, Settings settings) {
-//        AppDatabase db = AppDatabaseSingleton.getDatabase(context);
-//        db.getTransactionExecutor().execute(() -> {
-//            db.settingsDao().updateSettings(settings);
-//        });
-//    }
-//
-//    public void deleteSettings(Context context, Settings settings) {
-//        AppDatabase db = AppDatabaseSingleton.getDatabase(context);
-//        db.getTransactionExecutor().execute(() -> {
-//            db.settingsDao().delete(settings);
-//        });
-//    }
-//}
+public class SettingsViewModel extends AndroidViewModel {
 
-public class SettingsViewModel extends ViewModel {
+    private SettingsRepository repo;
 
-    public LiveData<List<Settings>> loadSettingsByEmail(Context context, String[] email) {
-        SettingsDatabase db = SettingsSingleton.getDatabase(context);
-        return db.settingsDao().loadByEmail(email);
+    public SettingsViewModel (Application application) {
+        super(application);
+        repo = new SettingsRepository(application);
     }
 
-    public LiveData<Settings> loadSettingsById(Context context, Integer id) {
-        AppDatabase db = AppDatabaseSingleton.getDatabase(context);
-        return db.settingsDao().loadById(id);
-    }
+    public void insert(Settings userSettings) { repo.insert(userSettings); }
 
-    public void insertSettings(Context context, Settings... settings) {
-        SettingsDatabase db = SettingsSingleton.getDatabase(context);
-        db.getTransactionExecutor().execute(() -> {
-            db.settingsDao().insert(settings);
-        });
-    }
-
-    public void updateSettings(Context context, Settings settings) {
-        SettingsDatabase db = SettingsSingleton.getDatabase(context);
-        db.getTransactionExecutor().execute(() -> {
-            db.settingsDao().updateSettings(settings);
-        });
-    }
+    public LiveData<Settings> findSettingsByEmail(String email) { return repo.findSettingsByEmail(email); }
 
 }

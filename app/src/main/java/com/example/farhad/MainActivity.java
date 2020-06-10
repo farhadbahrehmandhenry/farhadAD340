@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         if (nameIsValid && emailIsValid && usernameIsValid && ageIsValid && dateOfBirthIsValid) {
             button.setImageResource(R.drawable.play_green);
-            Intent intent = new Intent(this, ProfileActivity.class);
+            Intent intent = new Intent(this,TabbedActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_USERNAME, usernameField);
             bundle.putString(Constant.KEY_NAME, nameField);

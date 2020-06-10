@@ -1,143 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings_scroll_view"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView_account_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin24"
+        android:layout_marginLeft="@dimen/margin24"
+        android:text="@string/account_type_text"/>
+
+    <Spinner
+        android:id="@+id/accountType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_account_privacy"
+        android:layout_marginLeft="@dimen/margin24" />
+
+    <TextView
+        android:id="@+id/textView_max_distance"
+        android:layout_width="@dimen/margin200"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accountType"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_marginTop="@dimen/margin24"
+        android:text="@string/max_distance"/>
+
+    <EditText
+        android:id="@+id/editText_max_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginLeft="@dimen/margin24"
+        android:text="10"
+        android:layout_below="@+id/textView_max_distance"/>
+
+    <TextView
+        android:id="@+id/textView_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_max_distance"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginLeft="@dimen/margin24"
+        android:text="@string/gender"/>
+
+    <Spinner
+        android:id="@+id/spinner_gender"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/dim30"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/dim30"
-        tools:ignore="UselessParent">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_gender"
+        />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView_looking_for_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_below="@+id/spinner_gender"
+        android:text="@string/gender"/>
 
-                <TextView
-                    android:id="@+id/account_Type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="account type - public" />
-                <Switch
-                    android:id="@+id/account_type_switch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim1"
-                    android:layout_marginTop="@dimen/dim_10"
-                    android:background="@color/grey"/>
-
-                <EditText
-                    android:id="@+id/daily_match_reminder_ID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/reminder"
-                    android:textSize="@dimen/dimText20"
-                    android:textColor="@color/black"/>
-
-                <TimePicker
-                    android:id="@+id/match_reminder_setting_Id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:numbersBackgroundColor="@color/colorAccent"
-                    android:adjustViewBounds="true"
-                    android:timePickerMode="spinner"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim1"
-                    android:layout_marginTop="@dimen/dim_10"
-                    android:background="@color/grey"/>
-
-                <TextView
-                    android:id="@+id/max_distance_ID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/max_distance_search_in_miles_info" />
-
-                <NumberPicker
-                    android:id="@+id/distance_value"
-                    android:layout_width="@dimen/dime_width120"
-                    android:layout_height="@dimen/dim30" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim1"
-                    android:layout_marginTop="@dimen/dim_10"
-                    android:background="@color/grey"/>
+    <Spinner
+        android:id="@+id/spinner_looking_for_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_looking_for_gender" />
 
 
-                <TextView
-                    android:id="@+id/min_age_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/min_age" />
+    <TextView
+        android:id="@+id/textView_age_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_below="@+id/spinner_looking_for_gender"
+        android:text="@string/age"/>
 
-                <NumberPicker
-                    android:id="@+id/min_age_value"
-                    android:layout_width="@dimen/dime_width120"
-                    android:layout_height="60dp" />
+    <EditText
+        android:id="@+id/editText_min_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="18"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_below="@+id/textView_age_range"
+        android:autofillHints="18" />
 
-                <TextView
-                    android:id="@+id/max_age_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/max_age" />
+    <TextView
+        android:id="@+id/textView_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin24"
+        android:layout_alignBottom="@id/editText_min_age"
+        android:layout_toEndOf="@id/editText_min_age"
+        android:text="-"
+        android:layout_marginHorizontal="@dimen/margin24"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
-                <NumberPicker
-                    android:id="@+id/max_age_value"
-                    android:layout_width="@dimen/dime_width120"
-                    android:layout_height="60dp" />
+    <EditText
+        android:id="@+id/editText_max_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="99"
+        android:layout_marginLeft="@dimen/margin100"
+        android:layout_below="@+id/textView_age_range"
+        android:autofillHints="99" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim1"
-                    android:layout_marginTop="@dimen/dim_10"
-                    android:background="@color/grey"/>
+    <TextView
+        android:id="@+id/textView_reminder_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reminder"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_below="@+id/editText_max_age"
+        />
 
-                <TextView
-                    android:id="@+id/gender_preference_ID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gender_pref_info" />
+    <TimePicker
+        android:id="@+id/reminder_time_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numbersBackgroundColor="@color/colorAccent"
+        android:adjustViewBounds="true"
+        android:timePickerMode="spinner"
+        android:layout_below="@+id/textView_reminder_time"
+        android:layout_toEndOf="@id/textView_reminder_time"
+        android:layout_marginHorizontal="@dimen/margin24"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
 
-                <Spinner
-                    android:id="@+id/gender_spinner_ID"
-                    android:layout_width="@dimen/dime_width120"
-                    android:layout_height="wrap_content" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dim1"
-                    android:layout_marginTop="@dimen/dim_10"
-                    android:background="@color/grey"/>
-
-            </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:paddingStart="@dimen/margin20"
-                android:text="@string/save"
-                tools:ignore="RtlSymmetry" />
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
-</FrameLayout>
+    <Button
+        android:id="@+id/button_save_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_time_picker"
+        android:text="@string/save" />
+</RelativeLayout>

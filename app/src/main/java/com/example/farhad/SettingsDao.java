@@ -11,25 +11,16 @@ import androidx.room.Update;
 import com.example.farhad.Settings;
 
 import java.util.List;
-//
+
 @Dao
 public interface SettingsDao {
 
-    @Query("SELECT * FROM settings WHERE id = (:id) LIMIT 1")
-    LiveData<Settings> loadById(Integer id);
+    @Query("SELECT * FROM settings")
+    LiveData<List<Settings>> getAll();
 
-    @Update
-    void updateSettings(Settings settings);
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertSettings(Settings... settings);
-
-    @Delete
-    void delete(Settings settings);
+    @Query("SELECT * FROM settings WHERE email LIKE :email LIMIT 1")
+    LiveData<Settings> findByEmail(String email);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Settings... settings);
-
-    @Query("SELECT * FROM settings WHERE email = :email")
-    LiveData<List<Settings>> loadByEmail(String[] email);
+    void insert(Settings userSettings);
 }

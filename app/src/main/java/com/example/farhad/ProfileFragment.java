@@ -1,52 +1,47 @@
 package com.example.farhad;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 public class ProfileFragment extends Fragment {
-    TextView profileName;
-    TextView profileAge;
-    TextView profileOccupation;
-    TextView profileDescription;
+    private static final String TAG = ProfileFragment.class.getSimpleName();
 
-    private int position;
-
-    public static ProfileFragment newInstance(int position) {
-        Bundle bundle = new Bundle();
-        bundle.putInt("pos", position);
-        ProfileFragment fragment = new ProfileFragment();
-        fragment.setArguments(bundle);
-
-        return fragment;
+    public ProfileFragment() {
+        // Required empty public constructor
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        position = getArguments().getInt("pos");
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        String[] data = ((ProfileActivity) getActivity()).getExtraData();
 
-        profileName = view.findViewById(R.id.name);
-        profileAge = view.findViewById(R.id.age);
-        profileOccupation = view.findViewById(R.id.occupation);
-        profileDescription = view.findViewById(R.id.description);
+        TextView profName = view.findViewById(R.id.name);
+        TextView profAgeLoc = view.findViewById(R.id.age);
+        TextView profOcc = view.findViewById(R.id.occupation);
+        TextView profDesc = view.findViewById(R.id.description);
+        ImageView profilePic = view.findViewById(R.id.profileImage);
 
-        profileName.setText(data[0]);
-        profileAge.setText(data[1]);
-        profileOccupation.setText(data[2]);
-        profileDescription.setText(data[3]);
+        Bundle bundle = getArguments();
 
+        StringBuilder nameString = new StringBuilder(bundle.getString(Constant.KEY_NAME).trim());
+        StringBuilder ageLocString = new StringBuilder(bundle.getString(Constant.KEY_AGE));
+        StringBuilder occString = new StringBuilder(" ")
+                .append(bundle.getString(Constant.KEY_OCCUPATION).trim());
+        StringBuilder descString = new StringBuilder(bundle.getString(Constant.KEY_DESCRIPTION.trim()));
+
+//        profilePic.setImageURI((Uri) bundle.get(Constant.KEY_Uri));
+        profilePic.setImageResource(R.drawable.profile_pic);
+        profName.setText(nameString);
+        profAgeLoc.setText(ageLocString);
+        profOcc.setText(occString);
+        profDesc.setText(descString);
         return view;
     }
 }

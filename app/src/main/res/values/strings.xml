@@ -54,7 +54,13 @@
     <string name="private_public_account">Private/Public Account</string>
     <string name="interested_age_range">Interested Age Range</string>
     <string name="max_distance_error">max distance cannot be less than 1</string>
+    <string name="enable_location">enable location</string>
+    <string name="location_message">location</string>
+    <string name="location_settings">location</string>
+    <string name="location_cancel">location</string>
+    <string name="network_provider_started_running">running</string>
 
+    network_provider_started_running
     <string name="date_WorkedOn">04/24/2020</string>
     <string name="last_first_name">Kunte, Jenny</string>
 
@@ -96,4 +102,8 @@
     <string name="Updated">Updated</string>
     <string name="save">save</string>
     <string name="reminder">reminder</string>
+    <string name="_00_00">_00_00</string>
+    <string name="min">min</string>
+    <string name="max">max</string>
+    <string name="max_distance">max distance</string>
 </resources>
