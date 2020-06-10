@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class MatchViewModel {
 
     private MatchModel matchModel;
-
     public MatchViewModel() {
         matchModel = new MatchModel();
     }

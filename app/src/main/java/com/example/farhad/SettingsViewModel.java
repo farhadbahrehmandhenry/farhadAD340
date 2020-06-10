@@ -11,17 +11,18 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-public class SettingsViewModel extends AndroidViewModel {
+public class SettingsViewModel extends ViewModel {
 
-    private SettingsRepository repo;
-
-    public SettingsViewModel (Application application) {
-        super(application);
-        repo = new SettingsRepository(application);
+    public LiveData<List<Settings>> loadSettingsByEmail(Context context, String[] email) {
+        SettingsDatabase db = SettingsSingleton.getDatabase(context);
+        return db.settingsDao().loadByEmail(email);
     }
 
-    public void insert(Settings userSettings) { repo.insert(userSettings); }
-
-    public LiveData<Settings> findSettingsByEmail(String email) { return repo.findSettingsByEmail(email); }
+    public void insertSettings(Context context, Settings... settings) {
+        SettingsDatabase db = SettingsSingleton.getDatabase(context);
+        db.getTransactionExecutor().execute(() -> {
+            db.settingsDao().insert(settings);
+        });
+    }
 
 }

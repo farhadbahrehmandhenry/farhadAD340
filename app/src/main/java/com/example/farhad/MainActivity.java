@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private EditText dob;
     private EditText description;
     private EditText occupation;
-
     private ImageButton button;
 
     @Override
@@ -57,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         dob.setText("");
         description.setText("");
         occupation.setText("");
-
         name.requestFocus();
     }
 

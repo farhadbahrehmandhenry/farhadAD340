@@ -15,12 +15,9 @@ import java.util.List;
 @Dao
 public interface SettingsDao {
 
-    @Query("SELECT * FROM settings")
-    LiveData<List<Settings>> getAll();
-
-    @Query("SELECT * FROM settings WHERE email LIKE :email LIMIT 1")
-    LiveData<Settings> findByEmail(String email);
+    @Query("SELECT * FROM settings_database WHERE email = :email")
+    LiveData<List<Settings>> loadByEmail(String[] email);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Settings userSettings);
+    void insert(Settings... settings);
 }

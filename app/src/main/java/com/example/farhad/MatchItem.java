@@ -46,6 +46,5 @@ public class MatchItem implements Parcelable {
         parcel.writeByte((byte) (liked ? 1 : 0));
         parcel.writeString(lat);
         parcel.writeString(longitude);
-
     }
 }

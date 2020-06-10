@@ -17,5 +17,4 @@ public class Constant {
     public static final String KEY_Uri = "imageUri";
     static final String KEY_USER_DATA = "user date bundle";
     public static final int GET_LOCATION_SETTINGS = 8;
-
 }

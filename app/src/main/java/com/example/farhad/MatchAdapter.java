@@ -77,6 +77,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchHolder> {
         if (matches != null) {
             return matches.size();
         }
+
         return 0;
     }
 }

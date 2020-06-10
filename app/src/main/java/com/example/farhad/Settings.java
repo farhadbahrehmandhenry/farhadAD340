@@ -1,62 +1,51 @@
 package com.example.farhad;
 
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.annotation.NonNull;
 
-@Entity(tableName = "settings")
-class Settings {
+@Entity(tableName = "settings_database")
+public class Settings {
+
     @NonNull
     @PrimaryKey
-    @ColumnInfo(name = "email")
-    private String email;
+    private String email = "";
 
-    @ColumnInfo(name = "reminder_time")
-    private String reminderTime;
-
-    @ColumnInfo(name = "max_distance")
-    private int maxDistance;
-
-    @ColumnInfo(name = "gender")
-    private String gender;
-
-    @ColumnInfo(name = "looking_for_gender")
-    private String lookingForGender;
-
-    @ColumnInfo(name = "private_account")
-    private boolean privateAccount;
-
-    @ColumnInfo(name = "min_age")
-    private int minAge;
-
-    @ColumnInfo(name = "max_age")
-    private int maxAge;
-
-    public Settings() {
-        email = "placeholder_email";
-        reminderTime = "00:00";
-        maxDistance = 100;
-        gender = "";
-        lookingForGender = "";
-        privateAccount = true;
-    }
+    public void setEmail(String email) { this.email = email; }
+    public String getEmail() { return email; }
 
     @NonNull
-    public String getEmail() { return email; }
-    public String getReminderTime() { return reminderTime; }
-    public int getMaxDistance() { return maxDistance; }
+    @ColumnInfo(name = "distance")
+    private int distance = 0;
+
+    @NonNull
+    public int getDistance() { return distance; };
+    public void setDistance(@NonNull Integer distance) { this.distance = distance; }
+
+    @ColumnInfo(name = "ageRange")
+    private int ageRange = 0;
+
+    public int getAgeRange() { return ageRange; }
+    public void setAgeRange(int ageRange) { this.ageRange = ageRange; }
+
+    @ColumnInfo(name = "reminder")
+    private String reminder = "No Reminder";
+
+    public String getReminder() { return reminder; }
+    public void setReminder(String reminder) { this.reminder = reminder; }
+
+    @ColumnInfo(name = "privacy")
+    private String privacy = "";
+
+    public String getPrivacy() { return privacy; }
+    public void setPrivacy(String privacy) { this.privacy = privacy; }
+
+    @Nullable
+    @ColumnInfo(name = "gender")
+    private String gender = "";
+
     public String getGender() { return gender; }
-    public String getLookingForGender() { return lookingForGender; }
-    public boolean getPrivateAccount() { return privateAccount; }
-    public int getMinAge() { return minAge; }
-    public int getMaxAge() { return maxAge; }
-    public void setEmail(@NonNull String newEmail) { email = newEmail; }
-    public void setReminderTime(String newReminderTime) { reminderTime = newReminderTime; }
-    public void setMaxDistance(int newMaxDistance) { maxDistance = newMaxDistance; }
-    public void setGender(String newGender) { gender = newGender; }
-    public void setLookingForGender(String newLookingForGender) { lookingForGender = newLookingForGender; }
-    public void setPrivateAccount(boolean newPrivateAccount) { privateAccount = newPrivateAccount; }
-    public void setMinAge(int newMinAge) { minAge = newMinAge; }
-    public void setMaxAge(int newMaxAge) { maxAge = newMaxAge; }
+    public void setGender(@Nullable String gender) { this.gender = gender; }
 }

@@ -1,15 +1,11 @@
 package com.example.farhad;
 
-import android.view.MenuItem;
 
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,7 +40,6 @@ public class MatchModel {
     }
 
     public void clear() {
-        // Clear all the listeners onPause
         listeners.forEach(ListenerRegistration::remove);
     }
 }

@@ -1,6 +1,5 @@
 package com.example.farhad;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ public class ProfileFragment extends Fragment {
     private static final String TAG = ProfileFragment.class.getSimpleName();
 
     public ProfileFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -36,12 +34,12 @@ public class ProfileFragment extends Fragment {
                 .append(bundle.getString(Constant.KEY_OCCUPATION).trim());
         StringBuilder descString = new StringBuilder(bundle.getString(Constant.KEY_DESCRIPTION.trim()));
 
-//        profilePic.setImageURI((Uri) bundle.get(Constant.KEY_Uri));
         profilePic.setImageResource(R.drawable.profile_pic);
         profName.setText(nameString);
         profAgeLoc.setText(ageLocString);
         profOcc.setText(occString);
         profDesc.setText(descString);
+
         return view;
     }
 }
