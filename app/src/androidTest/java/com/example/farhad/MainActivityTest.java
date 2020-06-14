@@ -216,7 +216,7 @@ public class MainActivityTest {
         try {
             Intents.init();
             onView(withId(R.id.signup)).perform(click());
-            intended(hasComponent(ProfileActivity.class.getName()));
+            intended(hasComponent(TabbedActivity.class.getName()));
             intended(hasExtra(Constant.KEY_USERNAME, "farhad1982"));
             intended(hasExtra(Constant.KEY_NAME, "farhad"));
             intended(hasExtra(Constant.KEY_AGE, "37"));
