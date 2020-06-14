@@ -3,19 +3,25 @@ package com.example.farhad;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
+import org.junit.Test;
+
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.junit.Assert.assertTrue;
 
 public class ProfileActivityTest {
     @Rule
-    public ActivityTestRule<ProfileActivity> activityTestRule = new ActivityTestRule<>(ProfileActivity.class);
+    public ActivityTestRule<TabbedActivity> activityTestRule = new ActivityTestRule<>(TabbedActivity.class);
 
-//    @Test
-//    public void goesToMain() {
-//        onView(withId(R.id.backButton)).perform(click());
-//
-//        ProfileActivity activity = activityTestRule.getActivity();
-//
-//        assertTrue(activity.isFinishing());
-//    }
+    @Test
+    public void goesToMain() {
+        onView(withId(R.id.backButton)).perform(click());
+
+        TabbedActivity activity = activityTestRule.getActivity();
+
+        assertTrue(activity.isFinishing());
+    }
 //
 //    @Test
 //    public void hasImage() {
